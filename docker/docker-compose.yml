@@ -18,7 +18,7 @@ services:
     image: fastchat:latest
     entrypoint: ["python3.9", "-m", "fastchat.serve.model_worker", "--model-names", "${FASTCHAT_WORKER_MODEL_NAMES:-vicuna-7b-v1.5}", "--model-path", "${FASTCHAT_WORKER_MODEL_PATH:-lmsys/vicuna-7b-v1.5}", "--worker-address", "http://fastchat-model-worker:21002", "--controller-address", "http://fastchat-controller:21001", "--host", "0.0.0.0", "--port", "21002", "--device", "cpu"]
     healthcheck:
-      test: ["CMD", "sleep", "3"] # just wait until model is uploaded, otherwise it's not recognized by gradio service
+      test: ["CMD", "sleep", "5"] # just wait until model is uploaded, otherwise it's not recognized by gradio service
   fastchat-gradio-server:
     build:
       context: .
