@@ -1,0 +1,9 @@
+prompt-toolkit
+rich
+psutil
+transformers
+accelerate
+sentencepiece
+protobuf
+fastapi
+gradio
